@@ -1,0 +1,31 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Cta from "@components/cta.astro";
+import Footer from "@components/footer.astro";
+---
+
+<Layout title="About">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">About Us</Fragment>
+      <Fragment slot="desc" class="text-black-700">Connecting and delivering business</Fragment>
+    </Sectionhead>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800">
+        Empowering the world with FinEdge.
+      </h2>
+      <p class="text-lg leading-relaxed text-black-700">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati
+        veniam cum iste in temporibus reprehenderit dolorum, quas blanditiis.
+        Modi corporis error nesciunt laudantium quae assumenda blanditiis nihil
+        dolore placeat sit?
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+    </div>
+    <Cta></Cta>
+  </Container>
+</Layout>

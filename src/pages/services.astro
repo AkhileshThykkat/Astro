@@ -1,0 +1,74 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Pricing from "@components/pricing.astro";
+
+const pricing = [
+  {
+    name: "Tier 1",
+    price: "2k/month",
+    popular: false,
+    features: [
+      "No limit in transaction amount",
+      "200 Transactions per week",
+      "Customised team",
+      "Community Support",
+    ],
+    button: {
+      text: "Get Started",
+      link: "/",
+    },
+  },
+  {
+    name: "Tier 2",
+    price: {
+      monthly: "7k/month",
+      annual: "$16",
+      discount: "10%",
+      original: "$24",
+    },
+    popular: true,
+    features: [
+      "All Tier 1 Features",
+      "500 Transactions/week",
+      "BlockChain support",
+      "Advanced security"
+    ],
+    button: {
+      text: "Get Started",
+      link: "#",
+    },
+  },
+  {
+    name: "Tier 3",
+    price: "Custom",
+    popular: true,
+    features: [
+      "All Features",
+      "Unlimited Transactions",
+      "Dedicated Account Manager",
+      "24/7 Phone Support",
+    ],
+    button: {
+      text: "Contact us",
+      link: "/contact",
+    },
+  },
+];
+---
+
+<Layout title="Services">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Services</Fragment>
+      <Fragment slot="desc"
+        >Crypto and Blockchain support</Fragment
+      >
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+      {pricing.map((item) => <Pricing plan={item} />)}
+    </div>
+  </Container>
+</Layout>
